@@ -1,17 +1,60 @@
 ---
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Caterina Strings</title>
-	</head>
-	<body>
-		<h1>Caterina Strings</h1>
-		<p>Coming soon</p>
-	</body>
-</html>
+<Layout title="Caterina Strings — Wedding & Funeral Music in Manchester">
+
+  <section class="max-w-4xl mx-auto px-6 py-24 text-center">
+    <h1 class="font-display font-normal leading-tight" style="font-size: clamp(3rem, 8vw, 5.5rem);">
+      Caterina Strings
+    </h1>
+    <p class="font-body font-normal text-lg mt-6 text-ink" style="opacity: 0.75;">
+      Live classical music for the moments that matter — Manchester &amp; North West
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-24 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Card Wedding -->
+    <div class="border border-wedding p-12">
+      <p class="font-body text-xs font-medium tracking-widest uppercase text-wedding mb-4">
+        For Your Wedding Day
+      </p>
+      <h2 class="font-display font-normal text-4xl leading-snug mb-4">
+        Make your day unforgettable
+      </h2>
+      <p class="font-body text-base text-ink mb-8" style="opacity: 0.8;">
+        Ceremony, drinks reception, full day packages — string quartet, trio, duo or solo violin.
+      </p>
+      <a
+        href="/weddings"
+        class="font-body text-sm font-medium text-wedding inline-flex items-center gap-1 group no-underline"
+      >
+        Explore weddings
+        <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+
+    <!-- Card Funeral -->
+    <div class="border border-funeral p-12">
+      <p class="font-body text-xs font-medium tracking-widest uppercase text-funeral mb-4">
+        For a Dignified Farewell
+      </p>
+      <h2 class="font-display font-normal text-4xl leading-snug mb-4">
+        A timeless tribute
+      </h2>
+      <p class="font-body text-base text-ink mb-8" style="opacity: 0.8;">
+        Solo violin, duo or quartet for funeral services across Greater Manchester — same-week availability.
+      </p>
+      <a
+        href="/funerals"
+        class="font-body text-sm font-medium text-funeral inline-flex items-center gap-1 group no-underline"
+      >
+        Explore funerals
+        <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+
+  </section>
+
+</Layout>

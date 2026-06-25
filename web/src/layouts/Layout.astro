@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Caterina Strings",
+  description = "",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-bg text-ink font-body min-h-screen flex flex-col">
+    <header class="px-8 py-5 flex items-center justify-between border-b border-rule">
+      <a href="/" class="font-display text-2xl tracking-wide text-ink no-underline">
+        Caterina Strings
+      </a>
+      <nav>
+        <a href="/contact" class="font-body text-sm font-medium text-ink hover:text-wedding transition-colors duration-150">
+          Contact
+        </a>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="py-8 text-center border-t border-rule">
+      <p class="font-body text-sm" style="color: color-mix(in srgb, var(--color-ink) 60%, transparent);">
+        © 2026 Caterina Strings
+      </p>
+      <p class="font-body text-sm" style="color: color-mix(in srgb, var(--color-ink) 60%, transparent);">
+        Manchester, UK
+      </p>
+    </footer>
+  </body>
+</html>
