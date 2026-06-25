@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm *)",
+      "Bash(npx astro *)",
+      "Bash(npx *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git rev-parse*)",
+      "Bash(git show*)",
+      "Bash(git ls-files*)",
+      "Bash(git add *)",
+      "Bash(git commit*)",
+      "Bash(git restore*)",
+      "Bash(git checkout*)",
+      "Bash(Get-Process*)",
+      "Bash(Stop-Process*)",
+      "Bash(Get-Location*)",
+      "Bash(Set-Location*)",
+      "Bash(Get-ChildItem*)",
+      "Bash(netstat*)",
+      "Bash(taskkill*)",
+      "Bash(pwd)",
+      "Bash(ls*)",
+      "Bash(dir*)",
+      "Bash(cd web)",
+      "Bash(cd ..)"
+    ],
+    "deny": [
+      "Bash(git push*)",
+      "Bash(rm -rf*)",
+      "Bash(rm -r*)",
+      "Bash(git reset --hard*)"
+    ]
+  }
+}
