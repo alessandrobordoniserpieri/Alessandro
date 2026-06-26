@@ -27,6 +27,17 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
       >
         Live classical music for the moments that matter — Manchester &amp; North West
       </p>
+      <button
+        type="button"
+        data-todo="audio-da-implementare"
+        class="listen-btn mt-8 inline-flex items-center gap-2.5 font-body font-medium text-sm"
+        style="color: #FAF8F4; border: 1px solid rgba(250, 248, 244, 0.6); padding: 12px 24px; border-radius: 9999px;"
+      >
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+          <path d="M2 1.5L10 6L2 10.5V1.5Z" />
+        </svg>
+        Listen to a sample
+      </button>
     </div>
   </section>
 
@@ -34,12 +45,13 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
   <section class="max-w-4xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-6">
 
     <!-- Card Wedding -->
-    <div
-      class="relative overflow-hidden p-12"
-      style={`background-image: url('${cardWedding.src}'); background-size: cover; background-position: center;`}
-    >
-      <div class="absolute inset-0" style="background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);"></div>
-      <div class="relative z-10">
+    <div class="overflow-hidden">
+      <img
+        src={cardWedding.src}
+        alt="Wedding strings performance"
+        class="card-img"
+      />
+      <div class="p-10" style="background-color: var(--color-bg);">
         <p
           class="font-body font-medium uppercase mb-4"
           style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-wedding);"
@@ -63,12 +75,13 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
     </div>
 
     <!-- Card Funeral -->
-    <div
-      class="relative overflow-hidden p-12"
-      style={`background-image: url('${cardFuneral.src}'); background-size: cover; background-position: center;`}
-    >
-      <div class="absolute inset-0" style="background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);"></div>
-      <div class="relative z-10">
+    <div class="overflow-hidden">
+      <img
+        src={cardFuneral.src}
+        alt="Funeral strings performance"
+        class="card-img"
+      />
+      <div class="p-10" style="background-color: var(--color-bg);">
         <p
           class="font-body font-medium uppercase mb-4"
           style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-funeral);"

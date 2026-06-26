@@ -44,13 +44,56 @@ const {
       <slot />
     </main>
 
-    <footer class="py-8 text-center border-t border-rule">
-      <p class="font-body text-sm" style="color: color-mix(in srgb, var(--color-ink) 60%, transparent);">
-        © 2026 Caterina Strings
-      </p>
-      <p class="font-body text-sm" style="color: color-mix(in srgb, var(--color-ink) 60%, transparent);">
-        Manchester, UK
-      </p>
+    <footer class="border-t border-rule">
+      <div class="max-w-4xl mx-auto px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+
+        <!-- Brand -->
+        <div>
+          <p class="font-display text-2xl tracking-wide mb-3">Caterina Strings</p>
+          <p class="font-body text-sm" style="color: color-mix(in srgb, var(--color-ink) 65%, transparent);">
+            Live classical music for the moments that matter
+          </p>
+          <p class="font-body text-sm mt-1" style="color: color-mix(in srgb, var(--color-ink) 65%, transparent);">
+            Manchester &amp; North West
+          </p>
+        </div>
+
+        <!-- Explore -->
+        <div>
+          <p class="font-body font-medium uppercase mb-4" style="font-size: 0.75rem; letter-spacing: 0.15em; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">
+            Explore
+          </p>
+          <nav class="flex flex-col gap-2">
+            <a href="/weddings" class="font-body text-sm text-ink no-underline hover:text-wedding transition-colors duration-150">Weddings</a>
+            <a href="/funerals" class="font-body text-sm text-ink no-underline hover:text-funeral transition-colors duration-150">Funerals</a>
+            <a href="/repertoire" class="font-body text-sm text-ink no-underline hover:text-wedding transition-colors duration-150">Repertoire</a>
+            <a href="/contact" class="font-body text-sm text-ink no-underline hover:text-wedding transition-colors duration-150">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Get in touch -->
+        <div>
+          <p class="font-body font-medium uppercase mb-4" style="font-size: 0.75rem; letter-spacing: 0.15em; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">
+            Get in Touch
+          </p>
+          <p class="font-body text-sm text-ink mb-1">hello@caterinastrings.co.uk</p>
+          <p class="font-body text-sm text-ink mb-4">+44 (0)000 000 0000</p>
+          <a href="/contact" class="font-body text-sm font-medium text-wedding inline-flex items-center gap-1 group no-underline">
+            Request a quote
+            <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-rule">
+        <div class="max-w-4xl mx-auto px-6 py-4 text-center">
+          <p class="font-body" style="font-size: 0.75rem; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">
+            © 2026 Caterina Strings · All rights reserved
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script>

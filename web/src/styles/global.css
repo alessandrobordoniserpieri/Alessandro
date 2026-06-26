@@ -40,3 +40,27 @@ h1, h2, h3, h4, h5, h6 {
 #site-header.scrolled a {
   color: var(--color-ink);
 }
+
+.card-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .card-img {
+    height: 330px;
+  }
+}
+
+.listen-btn {
+  background: transparent;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.listen-btn:hover {
+  background-color: rgba(250, 248, 244, 0.1);
+  transform: scale(1.02);
+}
