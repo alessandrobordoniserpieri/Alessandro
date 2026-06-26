@@ -1,0 +1,341 @@
+---
+// Note: uses <img> directly for now — image optimisation sweep (Astro <Image>, WebP/AVIF, srcset) planned for a later step.
+import Layout from '../layouts/Layout.astro';
+import cardFuneral from '../assets/images/card-funeral.jpg';
+---
+
+<Layout
+  title="Funeral Music — Caterina Strings, Manchester"
+  description="Live classical music for funeral services across Greater Manchester. Solo violin, duo, trio or quartet — same-week availability."
+>
+
+  <!-- 1. HERO -->
+  <section
+    data-hero
+    class="relative overflow-hidden"
+    style="height: 80vh; min-height: 500px;"
+  >
+    <img
+      src={cardFuneral.src}
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+    />
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to top, rgba(31,31,35,0.88) 0%, rgba(31,31,35,0.40) 55%, rgba(31,31,35,0.08) 100%);"
+    ></div>
+    <div class="absolute bottom-0 left-0 p-10 md:p-16" style="max-width: 680px;">
+      <p
+        class="font-body font-medium uppercase mb-5"
+        style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-funeral);"
+      >
+        For a Dignified Farewell
+      </p>
+      <h1
+        class="font-display font-normal leading-tight mb-5"
+        style="font-size: clamp(3rem, 5vw, 5rem); color: #FAF8F4;"
+      >
+        Music that says what words cannot
+      </h1>
+      <p
+        class="font-body font-normal mb-8"
+        style="font-size: 1.125rem; color: #FAF8F4; opacity: 0.85; max-width: 50ch; line-height: 1.65;"
+      >
+        Live classical music for funeral services across Greater Manchester. Solo violin, duo, trio or quartet — chosen with care, performed with quiet presence.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="mailto:hello@caterinastrings.co.uk?subject=Funeral%20enquiry"
+          class="font-body font-medium text-sm px-6 py-3 no-underline inline-block"
+          style="background-color: var(--color-bg); color: var(--color-ink);"
+        >
+          Request a callback
+        </a>
+        <a
+          href="#pricing"
+          class="font-body font-medium text-sm px-6 py-3 no-underline inline-flex items-center gap-2 group"
+          style="border: 1px solid rgba(250,248,244,0.6); color: #FAF8F4;"
+        >
+          View pricing
+          <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. INTRO -->
+  <section data-reveal class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-12 md:gap-20 items-start">
+        <h2
+          class="font-display font-normal"
+          style="font-size: clamp(2rem, 3.5vw, 2.5rem); line-height: 1.2;"
+        >
+          Quiet, considered, present
+        </h2>
+        <div>
+          <p
+            class="font-body mb-5"
+            style="font-size: 1.0625rem; line-height: 1.75;"
+          >
+            We understand a funeral isn't a performance — it's a moment held with care. We work closely with your funeral director, clergy or celebrant to choose music that honours the person you're remembering, and we play with the restraint and dignity the moment asks for.
+          </p>
+          <p
+            class="font-body"
+            style="font-size: 1.0625rem; line-height: 1.75; color: color-mix(in srgb, var(--color-ink) 70%, transparent);"
+          >
+            Same-week availability across Greater Manchester.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. REPERTOIRE -->
+  <section data-reveal class="py-20 md:py-24 border-t border-rule">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <h2
+          class="font-display font-normal mb-4"
+          style="font-size: clamp(2rem, 3.5vw, 2.5rem);"
+        >
+          What we play
+        </h2>
+        <p
+          class="font-body mx-auto"
+          style="font-size: 1rem; max-width: 54ch; color: color-mix(in srgb, var(--color-ink) 65%, transparent); line-height: 1.65;"
+        >
+          A selection from our most-requested funeral pieces. We're happy to learn a meaningful work on request — just ask.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+
+        <div>
+          <p class="font-body font-medium uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-funeral);">
+            Entrance &amp; Exit
+          </p>
+          <h3 class="font-display font-normal mb-5" style="font-size: 1.5rem;">Processionals</h3>
+          <ul class="font-body space-y-3" style="font-size: 0.9375rem; line-height: 1.6; color: color-mix(in srgb, var(--color-ink) 78%, transparent);">
+            <li>Bach — Air on the G String</li>
+            <li>Pachelbel — Canon in D</li>
+            <li>Elgar — Nimrod (from Enigma Variations)</li>
+            <li>Mascagni — Intermezzo from Cavalleria Rusticana</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-body font-medium uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-funeral);">
+            During the Service
+          </p>
+          <h3 class="font-display font-normal mb-5" style="font-size: 1.5rem;">Reflective pieces</h3>
+          <ul class="font-body space-y-3" style="font-size: 0.9375rem; line-height: 1.6; color: color-mix(in srgb, var(--color-ink) 78%, transparent);">
+            <li>Schubert — Ave Maria</li>
+            <li>Fauré — Pavane</li>
+            <li>Lloyd Webber — Pie Jesu</li>
+            <li>Albinoni — Adagio in G minor</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-body font-medium uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-funeral);">
+            Hymns
+          </p>
+          <h3 class="font-display font-normal mb-5" style="font-size: 1.5rem;">Traditional hymns</h3>
+          <ul class="font-body space-y-3" style="font-size: 0.9375rem; line-height: 1.6; color: color-mix(in srgb, var(--color-ink) 78%, transparent);">
+            <li>All Things Bright and Beautiful</li>
+            <li>Abide With Me</li>
+            <li>Amazing Grace</li>
+            <li>Jerusalem</li>
+            <li>The Lord's My Shepherd</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ENSEMBLE & PRICING -->
+  <section id="pricing" data-reveal class="py-20 md:py-24" style="background-color: var(--color-bg-alt);">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-12">
+        <h2
+          class="font-display font-normal mb-4"
+          style="font-size: clamp(2rem, 3.5vw, 2.5rem);"
+        >
+          Ensemble options
+        </h2>
+        <p class="font-body" style="font-size: 1rem; color: color-mix(in srgb, var(--color-ink) 65%, transparent);">
+          Transparent pricing. All packages include 30 minutes for arrival and set-up.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <!-- Header row -->
+        <div class="grid grid-cols-3 pb-3" style="border-bottom: 1px solid var(--color-rule);">
+          <div class="font-body font-medium uppercase" style="font-size: 0.72rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Ensemble</div>
+          <div class="font-body font-medium uppercase" style="font-size: 0.72rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Includes</div>
+          <div class="font-body font-medium uppercase text-right" style="font-size: 0.72rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">From</div>
+        </div>
+        <!-- Rows -->
+        <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
+          <div class="font-body" style="font-size: 0.9375rem;">Solo violin</div>
+          <div class="font-body" style="font-size: 0.9375rem; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
+          <div class="font-body font-medium text-right" style="font-size: 0.9375rem;">£195</div>
+        </div>
+        <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
+          <div class="font-body" style="font-size: 0.9375rem;">Duo (violin + cello)</div>
+          <div class="font-body" style="font-size: 0.9375rem; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
+          <div class="font-body font-medium text-right" style="font-size: 0.9375rem;">£345</div>
+        </div>
+        <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
+          <div class="font-body" style="font-size: 0.9375rem;">Trio</div>
+          <div class="font-body" style="font-size: 0.9375rem; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
+          <div class="font-body font-medium text-right" style="font-size: 0.9375rem;">£445</div>
+        </div>
+        <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
+          <div class="font-body" style="font-size: 0.9375rem;">String quartet</div>
+          <div class="font-body" style="font-size: 0.9375rem; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
+          <div class="font-body font-medium text-right" style="font-size: 0.9375rem;">£545</div>
+        </div>
+        <!-- Note -->
+        <p class="font-body mt-6 mb-7" style="font-size: 0.84rem; color: color-mix(in srgb, var(--color-ink) 58%, transparent); line-height: 1.65;">
+          Prices from. Final quote may vary based on location and specific requirements. Travel within Greater Manchester included.
+        </p>
+        <!-- Callout -->
+        <div class="pl-5 py-1" style="border-left: 2px solid var(--color-funeral);">
+          <p class="font-body" style="font-size: 0.9375rem; line-height: 1.65; color: color-mix(in srgb, var(--color-ink) 78%, transparent);">
+            For funeral directors: 15% trade rate on all packages, dedicated booking line, response within 2 hours.
+            <a href="#trade" class="text-ink underline">See the section below.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HOW IT WORKS -->
+  <section data-reveal class="py-20 md:py-24 border-t border-rule">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <h2
+        class="font-display font-normal text-center mb-16"
+        style="font-size: clamp(2rem, 3.5vw, 2.5rem);"
+      >
+        How it works
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        <div>
+          <p class="font-display font-normal mb-3" style="font-size: 3rem; color: var(--color-funeral); line-height: 1;">1</p>
+          <h3 class="font-body font-medium mb-2" style="font-size: 1rem;">Get in touch</h3>
+          <p class="font-body" style="font-size: 0.9375rem; line-height: 1.65; color: color-mix(in srgb, var(--color-ink) 68%, transparent);">
+            Email, call, or use the form. Tell us a few details about the service.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-display font-normal mb-3" style="font-size: 3rem; color: var(--color-funeral); line-height: 1;">2</p>
+          <h3 class="font-body font-medium mb-2" style="font-size: 1rem;">We discuss</h3>
+          <p class="font-body" style="font-size: 0.9375rem; line-height: 1.65; color: color-mix(in srgb, var(--color-ink) 68%, transparent);">
+            We'll talk through music choices with you, your funeral director or celebrant.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-display font-normal mb-3" style="font-size: 3rem; color: var(--color-funeral); line-height: 1;">3</p>
+          <h3 class="font-body font-medium mb-2" style="font-size: 1rem;">Confirmation</h3>
+          <p class="font-body" style="font-size: 0.9375rem; line-height: 1.65; color: color-mix(in srgb, var(--color-ink) 68%, transparent);">
+            Written quote and confirmation within 24 hours.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-display font-normal mb-3" style="font-size: 3rem; color: var(--color-funeral); line-height: 1;">4</p>
+          <h3 class="font-body font-medium mb-2" style="font-size: 1rem;">We perform</h3>
+          <p class="font-body" style="font-size: 0.9375rem; line-height: 1.65; color: color-mix(in srgb, var(--color-ink) 68%, transparent);">
+            We arrive 30 minutes early, set up quietly, and play with care.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FOR FUNERAL DIRECTORS -->
+  <section id="trade" data-reveal class="py-20 md:py-28" style="background-color: var(--color-ink);">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <p
+        class="font-body font-medium uppercase mb-5"
+        style="font-size: 0.75rem; letter-spacing: 0.15em; color: color-mix(in srgb, var(--color-bg) 58%, transparent);"
+      >
+        B2B
+      </p>
+      <h2
+        class="font-display font-normal mb-6"
+        style="font-size: clamp(2rem, 3.5vw, 2.5rem); color: var(--color-bg);"
+      >
+        For funeral directors
+      </h2>
+      <p
+        class="font-body mb-10"
+        style="font-size: 1.0625rem; line-height: 1.78; color: color-mix(in srgb, var(--color-bg) 83%, transparent); max-width: 60ch;"
+      >
+        We work regularly with funeral directors across Greater Manchester. Preferred-supplier relationships include established directors across the region [names to be confirmed by Caterina]. We offer a 15% trade rate on all packages, a dedicated booking line with response within 2 business hours, and full £10 million public liability insurance documentation available on file.
+      </p>
+      <a
+        href="mailto:hello@caterinastrings.co.uk?subject=Funeral%20director%20enquiry"
+        class="font-body font-medium text-sm px-6 py-3 no-underline inline-flex items-center gap-2 group"
+        style="border: 1px solid rgba(250,248,244,0.6); color: #FAF8F4;"
+      >
+        Book on behalf of a family
+        <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 7. FINAL CONTACT CTA -->
+  <section data-reveal class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 text-center">
+      <h2
+        class="font-display font-normal mb-6"
+        style="font-size: clamp(2rem, 3.5vw, 2.5rem);"
+      >
+        Get in touch
+      </h2>
+      <p
+        class="font-body mx-auto mb-12"
+        style="font-size: 1rem; line-height: 1.72; max-width: 52ch; color: color-mix(in srgb, var(--color-ink) 72%, transparent);"
+      >
+        We respond within four hours on business days, and often much sooner for funerals. There's no obligation in asking.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+        <a
+          href="mailto:hello@caterinastrings.co.uk"
+          class="font-body text-sm text-ink no-underline inline-flex items-center gap-2 hover:text-funeral transition-colors duration-150"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m2 7 10 7 10-7"/>
+          </svg>
+          hello@caterinastrings.co.uk
+        </a>
+        <a
+          href="tel:+440000000000"
+          class="font-body text-sm text-ink no-underline inline-flex items-center gap-2 hover:text-funeral transition-colors duration-150"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12 19.79 19.79 0 0 1 1.41 3.18 2 2 0 0 1 3.38 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          +44 (0)000 000 0000
+        </a>
+        <a
+          href="/contact"
+          class="font-body text-sm font-medium text-funeral inline-flex items-center gap-1 group no-underline"
+        >
+          Contact form
+          <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

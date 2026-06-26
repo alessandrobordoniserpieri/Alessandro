@@ -101,11 +101,20 @@ const {
       function tick() {
         const hero = document.querySelector('[data-hero]');
         if (!header) return;
-        const pastHero = hero ? hero.getBoundingClientRect().bottom <= 0 : window.scrollY > 80;
+        const pastHero = hero ? hero.getBoundingClientRect().bottom <= 0 : true;
         header.classList.toggle('scrolled', pastHero);
       }
       window.addEventListener('scroll', tick, { passive: true });
       tick();
+    </script>
+
+    <script>
+      const ro = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('[data-reveal]').forEach(el => ro.observe(el));
     </script>
   </body>
 </html>
