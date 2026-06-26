@@ -1,58 +1,94 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import heroBg from '../assets/images/hero-background.jpg';
+import cardWedding from '../assets/images/card-wedding.jpg';
+import cardFuneral from '../assets/images/card-funeral.jpg';
 ---
 
 <Layout title="Caterina Strings — Wedding & Funeral Music in Manchester">
 
-  <section class="max-w-4xl mx-auto px-6 py-24 text-center">
-    <h1 class="font-display font-normal leading-tight" style="font-size: clamp(3rem, 8vw, 5.5rem);">
-      Caterina Strings
-    </h1>
-    <p class="font-body font-normal text-lg mt-6 text-ink" style="opacity: 0.75;">
-      Live classical music for the moments that matter — Manchester &amp; North West
-    </p>
+  <!-- Hero full-screen con immagine -->
+  <section
+    data-hero
+    class="relative min-h-screen flex items-center justify-center"
+    style={`background-image: url('${heroBg.src}'); background-size: cover; background-position: center;`}
+  >
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="relative z-10 text-center px-6">
+      <h1
+        class="font-display font-normal leading-tight"
+        style="font-size: clamp(3rem, 8vw, 5.5rem); color: #FAF8F4;"
+      >
+        Caterina Strings
+      </h1>
+      <p
+        class="font-body font-normal text-lg mt-6"
+        style="color: #FAF8F4; opacity: 0.82;"
+      >
+        Live classical music for the moments that matter — Manchester &amp; North West
+      </p>
+    </div>
   </section>
 
-  <section class="max-w-4xl mx-auto px-6 pb-24 grid grid-cols-1 md:grid-cols-2 gap-6">
+  <!-- Cards servizi -->
+  <section class="max-w-4xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-6">
 
     <!-- Card Wedding -->
-    <div class="border border-wedding p-12">
-      <p class="font-body text-xs font-medium tracking-widest uppercase text-wedding mb-4">
-        For Your Wedding Day
-      </p>
-      <h2 class="font-display font-normal text-4xl leading-snug mb-4">
-        Make your day unforgettable
-      </h2>
-      <p class="font-body text-base text-ink mb-8" style="opacity: 0.8;">
-        Ceremony, drinks reception, full day packages — string quartet, trio, duo or solo violin.
-      </p>
-      <a
-        href="/weddings"
-        class="font-body text-sm font-medium text-wedding inline-flex items-center gap-1 group no-underline"
-      >
-        Explore weddings
-        <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
-      </a>
+    <div
+      class="relative overflow-hidden p-12"
+      style={`background-image: url('${cardWedding.src}'); background-size: cover; background-position: center;`}
+    >
+      <div class="absolute inset-0" style="background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);"></div>
+      <div class="relative z-10">
+        <p
+          class="font-body font-medium uppercase mb-4"
+          style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-wedding);"
+        >
+          For Your Wedding Day
+        </p>
+        <h2 class="font-display font-normal text-4xl leading-snug mb-4">
+          Make your day unforgettable
+        </h2>
+        <p class="font-body text-base text-ink mb-8" style="opacity: 0.8;">
+          Ceremony, drinks reception, full day packages — string quartet, trio, duo or solo violin.
+        </p>
+        <a
+          href="/weddings"
+          class="font-body text-sm font-medium text-wedding inline-flex items-center gap-1 group no-underline"
+        >
+          Explore weddings
+          <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+        </a>
+      </div>
     </div>
 
     <!-- Card Funeral -->
-    <div class="border border-funeral p-12">
-      <p class="font-body text-xs font-medium tracking-widest uppercase text-funeral mb-4">
-        For a Dignified Farewell
-      </p>
-      <h2 class="font-display font-normal text-4xl leading-snug mb-4">
-        A timeless tribute
-      </h2>
-      <p class="font-body text-base text-ink mb-8" style="opacity: 0.8;">
-        Solo violin, duo or quartet for funeral services across Greater Manchester — same-week availability.
-      </p>
-      <a
-        href="/funerals"
-        class="font-body text-sm font-medium text-funeral inline-flex items-center gap-1 group no-underline"
-      >
-        Explore funerals
-        <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
-      </a>
+    <div
+      class="relative overflow-hidden p-12"
+      style={`background-image: url('${cardFuneral.src}'); background-size: cover; background-position: center;`}
+    >
+      <div class="absolute inset-0" style="background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);"></div>
+      <div class="relative z-10">
+        <p
+          class="font-body font-medium uppercase mb-4"
+          style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-funeral);"
+        >
+          For a Dignified Farewell
+        </p>
+        <h2 class="font-display font-normal text-4xl leading-snug mb-4">
+          A timeless tribute
+        </h2>
+        <p class="font-body text-base text-ink mb-8" style="opacity: 0.8;">
+          Solo violin, duo or quartet for funeral services across Greater Manchester — same-week availability.
+        </p>
+        <a
+          href="/funerals"
+          class="font-body text-sm font-medium text-funeral inline-flex items-center gap-1 group no-underline"
+        >
+          Explore funerals
+          <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+        </a>
+      </div>
     </div>
 
   </section>

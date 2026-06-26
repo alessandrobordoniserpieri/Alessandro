@@ -29,12 +29,12 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="bg-bg text-ink font-body min-h-screen flex flex-col">
-    <header class="px-8 py-5 flex items-center justify-between border-b border-rule">
-      <a href="/" class="font-display text-2xl tracking-wide text-ink no-underline">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 px-8 py-5 flex items-center justify-between border-b border-transparent">
+      <a href="/" class="font-display text-2xl tracking-wide no-underline">
         Caterina Strings
       </a>
       <nav>
-        <a href="/contact" class="font-body text-sm font-medium text-ink hover:text-wedding transition-colors duration-150">
+        <a href="/contact" class="font-body text-sm font-medium">
           Contact
         </a>
       </nav>
@@ -52,5 +52,17 @@ const {
         Manchester, UK
       </p>
     </footer>
+
+    <script>
+      const header = document.getElementById('site-header');
+      function tick() {
+        const hero = document.querySelector('[data-hero]');
+        if (!header) return;
+        const pastHero = hero ? hero.getBoundingClientRect().bottom <= 0 : window.scrollY > 80;
+        header.classList.toggle('scrolled', pastHero);
+      }
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    </script>
   </body>
 </html>
