@@ -15,7 +15,7 @@ const variants: Record<string, string> = {
   ghost: 'bg-transparent text-bg border border-bg/60 px-7 py-3.5 hover:bg-bg/10 hover:scale-[1.02]',
 };
 
-const fullClass = [base, variants[variant ?? 'primary'], className].filter(Boolean).join(' ');
+const fullClass = [base, variants[variant], className].filter(Boolean).join(' ');
 ---
 
 {href

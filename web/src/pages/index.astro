@@ -38,68 +38,104 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
     </div>
   </section>
 
-  <!-- Cards servizi -->
-  <section class="max-w-6xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 md:grid-cols-2 gap-6">
+  <!-- Cards servizi — text-first, image revealed on hover (desktop); strip on mobile -->
+  <section class="max-w-6xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 md:grid-cols-2 gap-8">
 
     <!-- Card Wedding -->
-    <div class="overflow-hidden">
-      <img
-        src={cardWedding.src}
-        alt="Wedding strings performance"
-        class="card-img"
-      />
-      <div class="p-10" style="background-color: var(--color-bg);">
+    <a href="/weddings" class="group relative overflow-hidden block no-underline bg-bg-alt">
+      <!-- Mobile: image strip always visible -->
+      <div class="block md:hidden h-56 overflow-hidden">
+        <img
+          src={cardWedding.src}
+          alt="Wedding strings performance"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <!-- Desktop: hover-reveal image + wine tint -->
+      <div
+        class="hidden md:block absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        aria-hidden="true"
+      >
+        <img
+          src={cardWedding.src}
+          alt=""
+          class="w-full h-full object-cover scale-100 group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+        />
+        <div class="absolute inset-0" style="background: color-mix(in srgb, var(--color-wedding) 58%, transparent);"></div>
+      </div>
+      <!-- Text content -->
+      <div class="relative z-[1] p-10 md:p-14">
         <p
-          class="font-body font-medium uppercase mb-4"
-          style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-wedding);"
+          class="font-body font-medium uppercase mb-5 text-wedding transition-colors duration-300 group-hover:text-bg"
+          style="font-size: 0.7rem; letter-spacing: 0.18em;"
         >
           For Your Wedding Day
         </p>
-        <h2 class="font-display font-normal text-4xl leading-snug mb-4">
-          Make your day unforgettable
+        <h2
+          class="font-display font-normal leading-tight mb-5 text-ink transition-colors duration-300 group-hover:text-bg"
+          style="font-size: clamp(2.25rem, 3.5vw, 3.25rem);"
+        >
+          Make your day<br>unforgettable
         </h2>
-        <p class="font-body text-base text-ink mb-8" style="opacity: 0.8;">
+        <p class="font-body text-base text-ink/75 mb-10 transition-colors duration-300 group-hover:text-bg">
           Ceremony, drinks reception, full day packages — string quartet, trio, duo or solo violin.
         </p>
-        <a
-          href="/weddings"
-          class="font-body text-sm font-medium text-wedding inline-flex items-center gap-1 group no-underline"
+        <span
+          class="font-body text-sm font-medium inline-flex items-center gap-1 text-wedding transition-colors duration-300 group-hover:text-bg"
         >
           Explore weddings
           <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
-        </a>
+        </span>
       </div>
-    </div>
+    </a>
 
     <!-- Card Funeral -->
-    <div class="overflow-hidden">
-      <img
-        src={cardFuneral.src}
-        alt="Funeral strings performance"
-        class="card-img"
-      />
-      <div class="p-10" style="background-color: var(--color-bg);">
+    <a href="/funerals" class="group relative overflow-hidden block no-underline bg-bg-alt">
+      <!-- Mobile: image strip always visible -->
+      <div class="block md:hidden h-56 overflow-hidden">
+        <img
+          src={cardFuneral.src}
+          alt="Funeral strings performance"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <!-- Desktop: hover-reveal image + slate tint -->
+      <div
+        class="hidden md:block absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        aria-hidden="true"
+      >
+        <img
+          src={cardFuneral.src}
+          alt=""
+          class="w-full h-full object-cover scale-100 group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+        />
+        <div class="absolute inset-0" style="background: color-mix(in srgb, var(--color-funeral) 68%, transparent);"></div>
+      </div>
+      <!-- Text content -->
+      <div class="relative z-[1] p-10 md:p-14">
         <p
-          class="font-body font-medium uppercase mb-4"
-          style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-funeral);"
+          class="font-body font-medium uppercase mb-5 text-funeral transition-colors duration-300 group-hover:text-bg"
+          style="font-size: 0.7rem; letter-spacing: 0.18em;"
         >
           For a Dignified Farewell
         </p>
-        <h2 class="font-display font-normal text-4xl leading-snug mb-4">
-          A timeless tribute
+        <h2
+          class="font-display font-normal leading-tight mb-5 text-ink transition-colors duration-300 group-hover:text-bg"
+          style="font-size: clamp(2.25rem, 3.5vw, 3.25rem);"
+        >
+          A timeless<br>tribute
         </h2>
-        <p class="font-body text-base text-ink mb-8" style="opacity: 0.8;">
+        <p class="font-body text-base text-ink/75 mb-10 transition-colors duration-300 group-hover:text-bg">
           Solo violin, duo or quartet for funeral services across Greater Manchester — same-week availability.
         </p>
-        <a
-          href="/funerals"
-          class="font-body text-sm font-medium text-funeral inline-flex items-center gap-1 group no-underline"
+        <span
+          class="font-body text-sm font-medium inline-flex items-center gap-1 text-funeral transition-colors duration-300 group-hover:text-bg"
         >
           Explore funerals
           <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
-        </a>
+        </span>
       </div>
-    </div>
+    </a>
 
   </section>
 
