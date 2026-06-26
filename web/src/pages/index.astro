@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
 import heroBg from '../assets/images/hero-background.jpg';
 import cardWedding from '../assets/images/card-wedding.jpg';
 import cardFuneral from '../assets/images/card-funeral.jpg';
@@ -27,17 +28,13 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
       >
         Live classical music for the moments that matter — Manchester &amp; North West
       </p>
-      <button
-        type="button"
-        data-todo="audio-da-implementare"
-        class="listen-btn mt-8 inline-flex items-center gap-2.5 font-body font-medium text-sm"
-        style="color: #FAF8F4; border: 1px solid rgba(250, 248, 244, 0.6); padding: 12px 24px; border-radius: 9999px;"
-      >
+      {/* TODO: wire up audio player */}
+      <Button type="button" variant="ghost" class="mt-8">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
           <path d="M2 1.5L10 6L2 10.5V1.5Z" />
         </svg>
         Listen to a sample
-      </button>
+      </Button>
     </div>
   </section>
 

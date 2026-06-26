@@ -1,0 +1,24 @@
+---
+interface Props {
+  variant?: 'primary' | 'ghost';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  class?: string;
+}
+
+const { variant = 'primary', href, type = 'button', class: className } = Astro.props;
+
+const base = 'inline-flex items-center gap-2 rounded-full font-body font-medium text-sm tracking-wider uppercase transition-all duration-200 no-underline cursor-pointer';
+
+const variants: Record<string, string> = {
+  primary: 'bg-bg text-ink px-7 py-3.5 hover:bg-ink hover:text-bg hover:scale-[1.02]',
+  ghost: 'bg-transparent text-bg border border-bg/60 px-7 py-3.5 hover:bg-bg/10 hover:scale-[1.02]',
+};
+
+const fullClass = [base, variants[variant ?? 'primary'], className].filter(Boolean).join(' ');
+---
+
+{href
+  ? <a href={href} class={fullClass}><slot /></a>
+  : <button type={type} class={fullClass}><slot /></button>
+}
