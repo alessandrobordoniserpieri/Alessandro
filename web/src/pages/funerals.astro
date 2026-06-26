@@ -1,7 +1,7 @@
 ---
 // Note: uses <img> directly for now — image optimisation sweep (Astro <Image>, WebP/AVIF, srcset) planned for a later step.
 import Layout from '../layouts/Layout.astro';
-import cardFuneral from '../assets/images/card-funeral.jpg';
+import funeralsHero from '../assets/images/funerals-hero.jpg';
 ---
 
 <Layout
@@ -12,20 +12,19 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
   <!-- 1. HERO -->
   <section
     data-hero
-    class="relative overflow-hidden"
-    style="height: 80vh; min-height: 500px;"
+    class="relative overflow-hidden flex flex-col justify-end"
+    style="height: 80vh; min-height: 520px;"
   >
     <img
-      src={cardFuneral.src}
-      alt=""
-      aria-hidden="true"
+      src={funeralsHero.src}
+      alt="Empty chapel interior with natural light"
       class="absolute inset-0 w-full h-full object-cover object-center"
     />
     <div
       class="absolute inset-0"
-      style="background: linear-gradient(to top, rgba(31,31,35,0.88) 0%, rgba(31,31,35,0.40) 55%, rgba(31,31,35,0.08) 100%);"
+      style="background: linear-gradient(to top, rgba(31,31,35,0.90) 0%, rgba(31,31,35,0.42) 52%, rgba(31,31,35,0.06) 100%);"
     ></div>
-    <div class="absolute bottom-0 left-0 p-10 md:p-16" style="max-width: 680px;">
+    <div class="relative z-10 p-10 md:p-16" style="max-width: 700px;">
       <p
         class="font-body font-medium uppercase mb-5"
         style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-funeral);"
@@ -65,7 +64,7 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
   </section>
 
   <!-- 2. INTRO -->
-  <section data-reveal class="py-20 md:py-28">
+  <section data-reveal class="py-24 md:py-32">
     <div class="max-w-6xl mx-auto px-6 md:px-12">
       <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-12 md:gap-20 items-start">
         <h2
@@ -93,7 +92,7 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
   </section>
 
   <!-- 3. REPERTOIRE -->
-  <section data-reveal class="py-20 md:py-24 border-t border-rule">
+  <section data-reveal class="py-24 md:py-32">
     <div class="max-w-6xl mx-auto px-6 md:px-12">
       <div class="text-center mb-16">
         <h2
@@ -155,8 +154,8 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
     </div>
   </section>
 
-  <!-- 4. ENSEMBLE & PRICING -->
-  <section id="pricing" data-reveal class="py-20 md:py-24" style="background-color: var(--color-bg-alt);">
+  <!-- 4. ENSEMBLE & PRICING — bg-alt provides visual separation, no border needed -->
+  <section id="pricing" data-reveal class="py-20 md:py-28" style="background-color: var(--color-bg-alt);">
     <div class="max-w-6xl mx-auto px-6 md:px-12">
       <div class="text-center mb-12">
         <h2
@@ -171,32 +170,35 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
       </div>
 
       <div class="max-w-2xl mx-auto">
-        <!-- Header row -->
-        <div class="grid grid-cols-3 pb-3" style="border-bottom: 1px solid var(--color-rule);">
-          <div class="font-body font-medium uppercase" style="font-size: 0.72rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Ensemble</div>
-          <div class="font-body font-medium uppercase" style="font-size: 0.72rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Includes</div>
-          <div class="font-body font-medium uppercase text-right" style="font-size: 0.72rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">From</div>
+        <!-- Header row: 3 columns -->
+        <div
+          class="grid grid-cols-3 pb-3"
+          style="border-bottom: 1px solid var(--color-rule);"
+        >
+          <div class="font-body font-medium uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Ensemble</div>
+          <div class="font-body font-medium uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Includes</div>
+          <div class="font-body font-medium uppercase text-right" style="font-size: 0.7rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">From</div>
         </div>
-        <!-- Rows -->
+        <!-- Data rows: each is its own 3-column grid -->
         <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
-          <div class="font-body" style="font-size: 0.9375rem;">Solo violin</div>
-          <div class="font-body" style="font-size: 0.9375rem; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
-          <div class="font-body font-medium text-right" style="font-size: 0.9375rem;">£195</div>
-        </div>
-        <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
-          <div class="font-body" style="font-size: 0.9375rem;">Duo (violin + cello)</div>
-          <div class="font-body" style="font-size: 0.9375rem; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
-          <div class="font-body font-medium text-right" style="font-size: 0.9375rem;">£345</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">Solo violin</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
+          <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£195</div>
         </div>
         <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
-          <div class="font-body" style="font-size: 0.9375rem;">Trio</div>
-          <div class="font-body" style="font-size: 0.9375rem; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
-          <div class="font-body font-medium text-right" style="font-size: 0.9375rem;">£445</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">Duo (vln + cello)</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
+          <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£345</div>
         </div>
         <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
-          <div class="font-body" style="font-size: 0.9375rem;">String quartet</div>
-          <div class="font-body" style="font-size: 0.9375rem; color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
-          <div class="font-body font-medium text-right" style="font-size: 0.9375rem;">£545</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">Trio</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
+          <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£445</div>
+        </div>
+        <div class="grid grid-cols-3 py-4">
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">String quartet</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
+          <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£545</div>
         </div>
         <!-- Note -->
         <p class="font-body mt-6 mb-7" style="font-size: 0.84rem; color: color-mix(in srgb, var(--color-ink) 58%, transparent); line-height: 1.65;">
@@ -213,8 +215,8 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
     </div>
   </section>
 
-  <!-- 5. HOW IT WORKS -->
-  <section data-reveal class="py-20 md:py-24 border-t border-rule">
+  <!-- 5. HOW IT WORKS — bg returns to cream, padding provides separation -->
+  <section data-reveal class="py-20 md:py-28">
     <div class="max-w-6xl mx-auto px-6 md:px-12">
       <h2
         class="font-display font-normal text-center mb-16"
@@ -222,6 +224,7 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
       >
         How it works
       </h2>
+      <!-- 4 steps horizontal on desktop, stacked on mobile -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
         <div>
@@ -260,7 +263,7 @@ import cardFuneral from '../assets/images/card-funeral.jpg';
     </div>
   </section>
 
-  <!-- 6. FOR FUNERAL DIRECTORS -->
+  <!-- 6. FOR FUNERAL DIRECTORS — ink bg provides visual break -->
   <section id="trade" data-reveal class="py-20 md:py-28" style="background-color: var(--color-ink);">
     <div class="max-w-6xl mx-auto px-6 md:px-12">
       <p
