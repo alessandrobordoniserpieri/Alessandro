@@ -1,38 +1,28 @@
 {
+  "worktree": {
+    "bgIsolation": "none"
+  },
   "permissions": {
     "allow": [
-      "Bash(npm *)",
-      "Bash(npx astro *)",
-      "Bash(npx *)",
-      "Bash(git status*)",
-      "Bash(git diff*)",
-      "Bash(git log*)",
-      "Bash(git branch*)",
-      "Bash(git rev-parse*)",
-      "Bash(git show*)",
-      "Bash(git ls-files*)",
-      "Bash(git add *)",
-      "Bash(git commit*)",
-      "Bash(git restore*)",
-      "Bash(git checkout*)",
-      "Bash(Get-Process*)",
-      "Bash(Stop-Process*)",
-      "Bash(Get-Location*)",
-      "Bash(Set-Location*)",
-      "Bash(Get-ChildItem*)",
-      "Bash(netstat*)",
-      "Bash(taskkill*)",
-      "Bash(pwd)",
-      "Bash(ls*)",
-      "Bash(dir*)",
-      "Bash(cd web)",
-      "Bash(cd ..)"
+      "Bash(*)",
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Glob(*)",
+      "Grep(*)"
     ],
     "deny": [
       "Bash(git push*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
       "Bash(rm -rf*)",
       "Bash(rm -r*)",
-      "Bash(git reset --hard*)"
+      "Bash(Remove-Item -Recurse*)",
+      "Bash(git reset --hard*)",
+      "Bash(git branch -D*)",
+      "Bash(git checkout --orphan*)",
+      "Bash(git filter-branch*)",
+      "Bash(git update-ref -d*)"
     ]
   }
 }
