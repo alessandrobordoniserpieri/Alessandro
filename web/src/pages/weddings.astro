@@ -1,0 +1,304 @@
+---
+// Note: uses <img> directly — image optimisation sweep (<Image>, WebP/AVIF, srcset) planned for a later step.
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import weddingsHero from '../assets/images/weddings-hero.jpg';
+---
+
+<Layout
+  title="Wedding Music — Caterina Strings, Manchester"
+  description="Live classical and pop string music for weddings across Greater Manchester. Quartet, trio, duo or solo violin for ceremony, drinks reception and beyond."
+>
+
+  <!-- 1. HERO — mobile: min-h-screen + pt-20 (text at top, clears header)
+             desktop: md:h-[80vh] + md:mt-auto (text anchored bottom) -->
+  <section
+    data-hero
+    class="relative min-h-screen md:h-[80vh] md:min-h-0 flex flex-col overflow-hidden"
+  >
+    <!-- Background image: z-0, sits below gradient overlays -->
+    <img
+      src={weddingsHero.src}
+      alt="Wedding ceremony venue with floral decorations"
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    />
+    <!-- Vertical gradient: dark at bottom (text), transparent at top -->
+    <div
+      class="absolute inset-0 z-[1]"
+      style="background: linear-gradient(to top, color-mix(in srgb, var(--color-ink) 85%, transparent) 0%, color-mix(in srgb, var(--color-ink) 40%, transparent) 50%, color-mix(in srgb, var(--color-ink) 10%, transparent) 100%);"
+    ></div>
+    <!-- Horizontal gradient: extra contrast on left where text sits -->
+    <div
+      class="absolute inset-0 z-[1]"
+      style="background: linear-gradient(to right, color-mix(in srgb, var(--color-ink) 40%, transparent) 0%, transparent 65%);"
+    ></div>
+    <!-- Text — mobile: pt-20 clears fixed header; desktop: md:mt-auto anchors bottom -->
+    <div
+      class="relative z-[10] pt-20 md:pt-0 md:mt-auto px-6 md:px-12 pb-12 md:pb-16 max-w-[700px]"
+    >
+      <p
+        class="font-body font-medium uppercase mb-5"
+        style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-wedding);"
+      >
+        For Your Wedding Day
+      </p>
+      <h1
+        class="font-display font-normal leading-tight mb-5"
+        style="font-size: clamp(3rem, 5vw, 5rem); color: #FAF8F4;"
+      >
+        Live music for the day you'll always remember
+      </h1>
+      <p
+        class="font-body font-normal"
+        style="font-size: 1.125rem; color: #FAF8F4; opacity: 0.85; max-width: 50ch; line-height: 1.65;"
+      >
+        From the processional to the first dance — string quartet, trio, duo or solo violin for weddings across Greater Manchester and the North West.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-8">
+        <Button
+          href="mailto:hello@caterinastrings.co.uk?subject=Wedding%20enquiry"
+          variant="primary"
+        >
+          Request a quote
+        </Button>
+        <Button href="#pricing" variant="ghost">
+          View pricing →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. INTRO -->
+  <section data-reveal class="py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-12 md:gap-20 items-start">
+        <h2
+          class="font-display font-normal"
+          style="font-size: clamp(2rem, 3.5vw, 2.5rem); line-height: 1.2;"
+        >
+          Music that holds the moment
+        </h2>
+        <div>
+          <p class="font-body mb-5" style="font-size: 1.0625rem; line-height: 1.75;">
+            Whether you're walking down the aisle, raising a glass with your guests, or sharing your first dance, live strings bring a warmth that no recording can. We work with you to build a setlist that fits your venue, your style, and the people you've gathered.
+          </p>
+          <p
+            class="font-body"
+            style="font-size: 1.0625rem; line-height: 1.75; color: color-mix(in srgb, var(--color-ink) 70%, transparent);"
+          >
+            Available for weddings across Greater Manchester and the North West.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. REPERTOIRE — w-full section, max-w container inside, centred heading -->
+  <section data-reveal class="w-full px-6 md:px-12 py-24 md:py-32">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2
+          class="font-display font-normal mb-4"
+          style="font-size: clamp(2rem, 3.5vw, 2.5rem);"
+        >
+          What we play
+        </h2>
+        <p
+          class="font-body mx-auto"
+          style="font-size: 1rem; max-width: 54ch; color: color-mix(in srgb, var(--color-ink) 65%, transparent); line-height: 1.65;"
+        >
+          From classical processionals to your favourite pop song arranged for strings. We're happy to learn a special piece for your day — just ask.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+
+        <div>
+          <p class="font-body font-medium uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-wedding);">
+            Ceremony
+          </p>
+          <h3 class="font-display font-normal mb-5" style="font-size: 1.5rem;">Processionals</h3>
+          <ul class="font-body space-y-3" style="font-size: 0.9375rem; line-height: 1.6; color: color-mix(in srgb, var(--color-ink) 78%, transparent);">
+            <li>Pachelbel — Canon in D</li>
+            <li>Handel — Water Music (Air)</li>
+            <li>Vivaldi — Spring (The Four Seasons)</li>
+            <li>Wagner — Bridal Chorus</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-body font-medium uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-wedding);">
+            Drinks Reception
+          </p>
+          <h3 class="font-display font-normal mb-5" style="font-size: 1.5rem;">Crowd favourites</h3>
+          <ul class="font-body space-y-3" style="font-size: 0.9375rem; line-height: 1.6; color: color-mix(in srgb, var(--color-ink) 78%, transparent);">
+            <li>Einaudi — Nuvole Bianche (arr. strings)</li>
+            <li>Ed Sheeran — Perfect (arr. strings)</li>
+            <li>Debussy — Clair de Lune</li>
+            <li>Chopin — Nocturne in E♭</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-body font-medium uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--color-wedding);">
+            First Dance &amp; Beyond
+          </p>
+          <h3 class="font-display font-normal mb-5" style="font-size: 1.5rem;">Modern classics</h3>
+          <ul class="font-body space-y-3" style="font-size: 0.9375rem; line-height: 1.6; color: color-mix(in srgb, var(--color-ink) 78%, transparent);">
+            <li>Beyoncé — Halo (arr. strings)</li>
+            <li>Elvis Presley — Can't Help Falling in Love (arr. strings)</li>
+            <li>Coldplay — The Scientist (arr. strings)</li>
+            <li>John Legend — All of Me (arr. strings)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ENSEMBLE & PRICING — bg-alt provides visual separation -->
+  <section id="pricing" data-reveal class="py-20 md:py-28" style="background-color: var(--color-bg-alt);">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-12">
+        <h2
+          class="font-display font-normal mb-4"
+          style="font-size: clamp(2rem, 3.5vw, 2.5rem);"
+        >
+          Ensemble options
+        </h2>
+        <p class="font-body" style="font-size: 1rem; color: color-mix(in srgb, var(--color-ink) 65%, transparent);">
+          Transparent pricing. All packages include arrival, set-up and performance time.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <!-- Header row: 3 columns always -->
+        <div
+          class="grid grid-cols-3 pb-3"
+          style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--color-rule);"
+        >
+          <div class="font-body font-medium uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Ensemble</div>
+          <div class="font-body font-medium uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Includes</div>
+          <div class="font-body font-medium uppercase text-right" style="font-size: 0.7rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">From</div>
+        </div>
+        <!-- Data rows -->
+        <div class="grid grid-cols-3 py-4" style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--color-rule);">
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">Solo violin</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Ceremony (up to 45 min)</div>
+          <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£295</div>
+        </div>
+        <div class="grid grid-cols-3 py-4" style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--color-rule);">
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">Duo (vln + cello)</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Ceremony + drinks (up to 2 hrs)</div>
+          <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£495</div>
+        </div>
+        <div class="grid grid-cols-3 py-4" style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--color-rule);">
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">Trio</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Ceremony + drinks (up to 2.5 hrs)</div>
+          <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£645</div>
+        </div>
+        <div class="grid grid-cols-3 py-4" style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">String quartet</div>
+          <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Full package (up to 3 hrs)</div>
+          <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£795</div>
+        </div>
+        <!-- Footnote -->
+        <p class="font-body mt-6 mb-0" style="font-size: 0.84rem; color: color-mix(in srgb, var(--color-ink) 55%, transparent); line-height: 1.65;">
+          Prices from. Final quote tailored to your venue, timings and ensemble choice. Travel within Greater Manchester included.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HOW IT WORKS — grid directly on 4-child div, max-w-6xl mx-auto on grid -->
+  <section data-reveal class="py-20 md:py-28 px-6 md:px-12">
+    <h2
+      class="font-display font-normal text-center mb-16 max-w-6xl mx-auto"
+      style="font-size: clamp(2rem, 3.5vw, 2.5rem);"
+    >
+      How it works
+    </h2>
+    <!-- 4 direct children — no wrapper div between grid and steps -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 max-w-6xl mx-auto">
+
+      <div>
+        <p class="font-display font-normal mb-3" style="font-size: 3rem; color: var(--color-wedding); line-height: 1;">1</p>
+        <h3 class="font-body font-medium mb-2" style="font-size: 1rem;">Get in touch</h3>
+        <p class="font-body" style="font-size: 0.9375rem; line-height: 1.65; color: color-mix(in srgb, var(--color-ink) 68%, transparent);">
+          Tell us your date, venue and roughly what you're imagining.
+        </p>
+      </div>
+
+      <div>
+        <p class="font-display font-normal mb-3" style="font-size: 3rem; color: var(--color-wedding); line-height: 1;">2</p>
+        <h3 class="font-body font-medium mb-2" style="font-size: 1rem;">Bespoke chat</h3>
+        <p class="font-body" style="font-size: 0.9375rem; line-height: 1.65; color: color-mix(in srgb, var(--color-ink) 68%, transparent);">
+          We'll plan the setlist with you — ceremony pieces, drinks reception favourites, first dance if you'd like.
+        </p>
+      </div>
+
+      <div>
+        <p class="font-display font-normal mb-3" style="font-size: 3rem; color: var(--color-wedding); line-height: 1;">3</p>
+        <h3 class="font-body font-medium mb-2" style="font-size: 1rem;">Confirmation</h3>
+        <p class="font-body" style="font-size: 0.9375rem; line-height: 1.65; color: color-mix(in srgb, var(--color-ink) 68%, transparent);">
+          Written quote and booking confirmation within 24 hours. We take a small deposit to hold your date.
+        </p>
+      </div>
+
+      <div>
+        <p class="font-display font-normal mb-3" style="font-size: 3rem; color: var(--color-wedding); line-height: 1;">4</p>
+        <h3 class="font-body font-medium mb-2" style="font-size: 1rem;">On the day</h3>
+        <p class="font-body" style="font-size: 0.9375rem; line-height: 1.65; color: color-mix(in srgb, var(--color-ink) 68%, transparent);">
+          We arrive early, set up quietly, and play from the first note to the last.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. FINAL CONTACT CTA -->
+  <section data-reveal class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6 md:px-12 text-center">
+      <h2
+        class="font-display font-normal mb-6"
+        style="font-size: clamp(2rem, 3.5vw, 2.5rem);"
+      >
+        Get in touch
+      </h2>
+      <p
+        class="font-body mx-auto mb-12"
+        style="font-size: 1rem; line-height: 1.72; max-width: 52ch; color: color-mix(in srgb, var(--color-ink) 72%, transparent);"
+      >
+        We respond within four hours on business days. There's no obligation in asking — just tell us about your day.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+        <a
+          href="mailto:hello@caterinastrings.co.uk"
+          class="font-body text-sm text-ink no-underline inline-flex items-center gap-2 hover:text-wedding transition-colors duration-150"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m2 7 10 7 10-7"/>
+          </svg>
+          hello@caterinastrings.co.uk
+        </a>
+        <a
+          href="tel:+440000000000"
+          class="font-body text-sm text-ink no-underline inline-flex items-center gap-2 hover:text-wedding transition-colors duration-150"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12 19.79 19.79 0 0 1 1.41 3.18 2 2 0 0 1 3.38 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          +44 (0)000 000 0000
+        </a>
+        <a
+          href="/contact"
+          class="font-body text-sm font-medium text-wedding inline-flex items-center gap-1 group no-underline"
+        >
+          Contact form
+          <span class="inline-block transition-transform duration-150 group-hover:translate-x-1">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
