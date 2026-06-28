@@ -22,16 +22,8 @@ import funeralsHero from '../assets/images/funerals-hero.jpg';
       alt="Empty chapel interior with natural light"
       class="absolute inset-0 w-full h-full object-cover z-0"
     />
-    <!-- Vertical gradient: dark at bottom (text), transparent at top -->
-    <div
-      class="absolute inset-0 z-[1]"
-      style="background: linear-gradient(to top, color-mix(in srgb, var(--color-ink) 85%, transparent) 0%, color-mix(in srgb, var(--color-ink) 40%, transparent) 50%, color-mix(in srgb, var(--color-ink) 10%, transparent) 100%);"
-    ></div>
-    <!-- Horizontal gradient: extra contrast on left where text sits -->
-    <div
-      class="absolute inset-0 z-[1]"
-      style="background: linear-gradient(to right, color-mix(in srgb, var(--color-ink) 40%, transparent) 0%, transparent 65%);"
-    ></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/20 md:from-ink/85 md:via-ink/40 md:to-ink/10 pointer-events-none z-[1]"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/40 to-ink/15 md:from-ink/70 md:via-ink/20 md:to-transparent pointer-events-none z-[1]"></div>
     <!-- Text — mobile: pt-20 clears fixed header; desktop: md:mt-auto anchors bottom -->
     <div
       class="relative z-[10] pt-20 md:pt-0 md:mt-auto px-6 md:px-12 pb-12 md:pb-16 max-w-[700px]"
@@ -173,31 +165,28 @@ import funeralsHero from '../assets/images/funerals-hero.jpg';
 
       <div class="max-w-2xl mx-auto">
         <!-- Header row: 3 columns always -->
-        <div
-          class="grid grid-cols-3 pb-3"
-          style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--color-rule);"
-        >
+        <div class="grid grid-cols-3 pb-3" style="border-bottom: 1px solid var(--color-rule);">
           <div class="font-body font-medium uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Ensemble</div>
           <div class="font-body font-medium uppercase" style="font-size: 0.7rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">Includes</div>
           <div class="font-body font-medium uppercase text-right" style="font-size: 0.7rem; letter-spacing: 0.1em; color: color-mix(in srgb, var(--color-ink) 50%, transparent);">From</div>
         </div>
         <!-- Data rows -->
-        <div class="grid grid-cols-3 py-4" style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--color-rule);">
+        <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
           <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">Solo violin</div>
           <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
           <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£195</div>
         </div>
-        <div class="grid grid-cols-3 py-4" style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--color-rule);">
+        <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
           <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">Duo (vln + cello)</div>
           <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
           <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£345</div>
         </div>
-        <div class="grid grid-cols-3 py-4" style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--color-rule);">
+        <div class="grid grid-cols-3 py-4" style="border-bottom: 1px solid var(--color-rule);">
           <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">Trio</div>
           <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
           <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£445</div>
         </div>
-        <div class="grid grid-cols-3 py-4" style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+        <div class="grid grid-cols-3 py-4">
           <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">String quartet</div>
           <div class="font-body" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem); color: color-mix(in srgb, var(--color-ink) 60%, transparent);">Service + 30 min</div>
           <div class="font-body font-medium text-right" style="font-size: clamp(0.8rem, 1.5vw, 0.9375rem);">£545</div>
@@ -284,7 +273,7 @@ import funeralsHero from '../assets/images/funerals-hero.jpg';
         class="font-body mb-10"
         style="font-size: 1.0625rem; line-height: 1.78; color: color-mix(in srgb, var(--color-bg) 83%, transparent); max-width: 60ch;"
       >
-        We work regularly with funeral directors across Greater Manchester. Preferred-supplier relationships include established directors across the region [names to be confirmed by Caterina]. We offer a 15% trade rate on all packages, a dedicated booking line with response within 2 business hours, and full £10 million public liability insurance documentation available on file.
+        We work regularly with funeral directors across Greater Manchester. We offer a 15% trade rate on all packages, a dedicated booking line with response within 2 business hours, and full £10 million public liability insurance documentation available on file.
       </p>
       <a
         href="mailto:hello@caterinastrings.co.uk?subject=Funeral%20director%20enquiry"
