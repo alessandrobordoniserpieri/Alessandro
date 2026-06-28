@@ -43,10 +43,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Explicit responsive grid utilities — guarantees Tailwind JIT generates these for new pages */
+/* Explicit responsive utilities — guarantees Tailwind JIT generates these for new pages */
 @media (min-width: 768px) {
   .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .md\:h-\[80vh\]  { height: 80vh; }
+  .md\:pt-0        { padding-top: 0; }
+  .md\:mt-auto     { margin-top: auto; }
 }
 
 [data-reveal] {
