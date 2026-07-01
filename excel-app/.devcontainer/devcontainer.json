@@ -1,0 +1,41 @@
+{
+  "name": "Excel App - Ambiente di sviluppo",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "ritwickdey.LiveServer",
+        "pranaygp.vscode-css-peek",
+        "ecmel.vscode-html-css",
+        "christian-kohler.path-intellisense",
+        "naumovs.color-highlight",
+        "ms-vscode.vscode-typescript-next",
+        "yoavbls.pretty-ts-errors",
+        "eamodio.gitlens",
+        "usernamehw.errorlens",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "supermaven.supermaven",
+        "ms-ceintl.vscode-language-pack-it"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "emmet.includeLanguages": {
+          "javascript": "javascriptreact",
+          "typescript": "typescriptreact"
+        }
+      }
+    }
+  },
+  "forwardPorts": [3000, 5173],
+  "postCreateCommand": "npm install",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  }
+}

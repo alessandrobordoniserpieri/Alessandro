@@ -1,0 +1,32 @@
+name: Code Review Automatica
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint e Controllo Qualita
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: excel-app/package-lock.json
+      - run: cd excel-app && npm ci
+      - run: cd excel-app && npm run lint --if-present
+      - run: cd excel-app && npm run type-check --if-present
+
+  security:
+    name: Controllo Sicurezza
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: excel-app/package-lock.json
+      - run: cd excel-app && npm audit --audit-level=high || true

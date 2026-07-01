@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "ritwickdey.LiveServer",
+    "pranaygp.vscode-css-peek",
+    "ecmel.vscode-html-css",
+    "christian-kohler.path-intellisense",
+    "naumovs.color-highlight",
+    "eamodio.gitlens",
+    "usernamehw.errorlens",
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "supermaven.supermaven"
+  ]
+}
